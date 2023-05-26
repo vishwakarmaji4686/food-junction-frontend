@@ -1,0 +1,63 @@
+<div>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form action="/admin/updateProduct?productId=<%= product.id; %>" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <% if(message){ %>
+                            <h1>
+                                <%= message %>
+                            </h1>
+                            <% } %>
+                                <% console.log("message", message) %>
+                                    <div class="col-12">
+                                        <label>Title</label>
+                                        <input type="text" name="title" id="title" class="form-control"
+                                            value="<%= product.title; %>" />
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Price</label>
+                                        <input type="number" name="price" id="price" class="form-control"
+                                            value="<%= product.price; %>" required="required" />
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Quantity</label>
+                                        <input type="number" name="quantity" id="quantity" class="form-control"
+                                            value="<%= product.quantity; %>" required="required" />
+                                    </div>
+                                    <div class="col-12 mt-2">
+                                        <label>Description</label>
+                                        <textarea name="description"
+                                            class="form-control"><%= product.description; %></textarea>
+                                    </div>
+
+                                    <div class="col-12 mt-2">
+                                        <label>Category</label>
+                                        <select name="categoryId" class="form-control">
+                                            <option value="">Select Product Category</option>
+                                            <% for(let index=0; index < categories.length; index++){ let
+                                                singleCat=categories[index]; %>
+                                                <option <%=(product.categoryId==singleCat.id) ? "selected='selected'"
+                                                    : "" ; %> value="<%= singleCat.id; %>"><%= singleCat.title; %>
+                                                </option>
+                                                <% } %>
+                                        </select>
+                                    </div>
+                                    <!--  <div class="col-12 mt-2">
+                            <label>Images</label>
+                            <input type="file" name="productImages" multiple="multiple" />
+                        </div> -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">update Product</button>
+                    <a href="/admin/product" class="btn btn-danger">close</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

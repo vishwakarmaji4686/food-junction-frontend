@@ -1,0 +1,40 @@
+<div>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form action="/admin/updateCategory?categoryId=<%= category.id; %>" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <% if(message){ %>
+                            <h1><%= message %></h1>
+                        <% } %>
+                        <% console.log("message", message) %>
+                        <div class="col-12">
+                            <label>Title</label>
+                            <input type="text" name="title" id="title" class="form-control" value="<%= category.title; %>" />
+                        </div>
+                        <div class="col-12 mt-2">
+                            <label>Description</label>
+                            <textarea name="description" class="form-control"><%= category.description; %></textarea>
+                        </div>
+
+                        <!--  <div class="col-12 mt-2">
+                            <label>Parent Category</label>
+                            <select name="parentId" class="form-control">
+                                <option value="0">Select Product Category</option>  
+                                <option value=""></option>
+                            </select>
+                        </div> -->
+ 
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">create category</button>
+                    <a href="/admin/category" class="btn btn-danger">close</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

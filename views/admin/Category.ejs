@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="row">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>All Categories</h3>
+                        </div>
+                        <div class="col-6 text text-right">
+                            <a href="/admin/add-category" class="btn btn-primary"> add New</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <table class="table table-bordered table-light">
+                        <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i < category.length; i++){
+                                console.log("category", category) 
+                                let Categories = category[i]%>
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td><%= Categories.title %></td>
+                                <td><%= Categories.description %></td>
+                                <td>
+                                    <a href="/admin/edit-category?categoryId=<%= Categories.id; %>" class="btn btn-primary">Edit</a>
+                                    <a href="/admin/deleteCategory?categoryId=<%= Categories.id; %>" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

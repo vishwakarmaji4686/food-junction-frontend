@@ -1,0 +1,54 @@
+<div class="main-content">
+    <div class="row">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>All Dishes</h3>
+                        </div>
+                        <div class="col-6 text text-right">
+                            <a href="/admin/add-product" class="btn btn-primary">Add New</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <table class="table table-bordered table-light">
+                        <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Category</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i=0; i < products.length; i++){ 
+                                let product=products[i] %>
+                                <tr>
+                                    <td>
+                                        <%= i + 1; %>
+                                    </td>
+                                    <td></td>
+                                    <td><%= product.title; %></td>
+                                    <td><%= product.description; %></td>
+                                    <td><%= product.price; %></td>
+                                    <td><%= product.quantity; %></td>
+                                    <td><%= product.categoryId; %></td>
+                                    <td>
+                                        <a href="/admin/edit-product?productId=<%= product.id%>" class="btn btn-primary">Edit</a>
+                                        <a href="/admin/deleteProduct?productId=<%= product.id%>" class="btn btn-danger">delete</a>
+                                    </td>
+                                </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<h1>create User</h1>
+<div style="width: 700px; margin-left: 200px; ">
+    <form action="/admin/create-User" method="post">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <% if(message){ %> 
+                        <h3><%= message; %></h3>
+                        <% } %>
+                    <div class="col-6">
+                        <label>firstName</label>
+                        <input type="text" name="firstName" id="firstName" class="form-control" />
+                    </div>
+                    <div class="col-6">
+                        <label>lastName</label>
+                        <input type="text" name="lastName" id="lastName" class="form-control" />
+                    </div>
+                    <div class="col-12">
+                        <label>email</label>
+                        <input type="email" name="email" id="email" class="form-control" />
+                    </div>
+                    <div class="col-12 mt-2">
+                        <label>contact</label>
+                        <input type="number" name="contact" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12 mt-2">
+                    <label>password</label>
+                    <input type="password" name="password" multiple="multiple" class="form-control hide" />
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <a href="/admin/all-user" class="btn btn-danger">close</a>
+        </div>
+    </form>
+</div>
+</div>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
